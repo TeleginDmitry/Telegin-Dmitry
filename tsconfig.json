@@ -112,7 +112,11 @@
 			"icons/*": ["src/assets/icons/*"],
 			"images/*": ["src/assets/images/*"],
 			"styles/*": ["src/assets/styles/*"],
-			"scripts/*": ["src/scripts/*"]
+			"scripts/*": ["src/scripts/*"],
+			"configs/*": ["src/configs/*"],
+			"api/*": ["src/api/*"],
+			"services/*": ["src/services/*"],
+			"types/*": ["src/types/*"]
 		},
 		"outDir": "./build/",
 		"lib": ["es5", "es2015.core", "dom"]

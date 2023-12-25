@@ -92,6 +92,10 @@ module.exports = {
 			images: path.resolve(__dirname, 'src/assets/images'),
 			styles: path.resolve(__dirname, 'src/assets/styles'),
 			scripts: path.resolve(__dirname, 'src/scripts'),
+			configs: path.resolve(__dirname, 'src/configs'),
+			api: path.resolve(__dirname, 'src/api'),
+			services: path.resolve(__dirname, 'src/services'),
+			types: path.resolve(__dirname, 'src/types'),
 		},
 	},
 	devServer: {

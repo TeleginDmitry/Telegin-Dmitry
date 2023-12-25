@@ -15,6 +15,7 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"axios": "^1.6.2",
 		"css-loader": "^6.8.1",
 		"file-loader": "^6.2.0",
 		"group-css-media-queries-loader": "^4.3.0",

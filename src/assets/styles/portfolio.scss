@@ -2,7 +2,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  min-height: 100dvh;
+  min-height: 100vh;
   .body {
     position: relative;
     display: flex;
@@ -23,13 +23,72 @@
 
     .swiper {
       position: relative;
-      width: 600px;
-      height: 300px;
+      width: 100vw;
 
-      .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
+      .swiper-wrapper {
+        .swiper-slide {
+          width: 80vw;
+          display: flex;
+          flex-direction: column;
+          gap: 80px;
+
+          @media (max-width: 768px) {
+            gap: 60px;
+          }
+
+          .container {
+            position: relative;
+            height: 80vh;
+            min-height: 250px;
+
+            @media (max-width: 768px) {
+              height: 60vh;
+            }
+
+            .image {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              border-radius: 10px;
+              transition: opacity 0.8s ease-in-out;
+              opacity: 0.8;
+            }
+            .link {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              z-index: 1;
+            }
+          }
+
+          .description {
+            color: #ffffffbb;
+            font-size: 17px;
+            line-height: 25px;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+
+            span {
+              font-size: 21px;
+              font-weight: 700;
+              color: #ffffff;
+            }
+          }
+        }
+
+        .swiper-slide-active {
+          .description {
+            opacity: 1;
+          }
+
+          .container {
+            .image {
+              opacity: 1;
+            }
+          }
+        }
       }
     }
   }

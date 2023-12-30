@@ -5,6 +5,11 @@
   flex-direction: column;
   gap: 100px;
   padding-bottom: 100px;
+
+  @media (max-width: 425px) {
+    gap: 60px;
+  }
+
   .title {
     font-size: 25px;
     font-weight: 700;
@@ -14,6 +19,11 @@
     align-items: center;
     justify-content: center;
     gap: 50px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
     .info {
       display: flex;
       flex-direction: column;

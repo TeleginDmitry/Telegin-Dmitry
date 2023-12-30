@@ -12,13 +12,13 @@
 			<nav class="navigation">
 				<ul class="navigation__sections">
 					<li class="section">
-						<a class="link" href="#about">Обо мне</a>
+						<a class="link" href="#information">Обо мне</a>
 					</li>
 					<li class="section">
-						<a class="link" href="#works">Портфолио</a>
+						<a class="link" href="#portfolio">Портфолио</a>
 					</li>
 					<li class="section">
-						<a class="link" href="#forms">Как связаться</a>
+						<a class="link" href="#contacts">Как связаться</a>
 					</li>
 				</ul>
 			</nav>
@@ -55,8 +55,10 @@
 					</a>
 				</li>
 			</ul>
+
+			<div id="burger"><span></span><span></span><span></span></div>
 		</header>
-		<main id="wrapper">
+		<main id="main">
 			<section id="pre-header">
 				<div class="body">
 					<h2 class="title">Дмитрий Телегин</h2>
@@ -64,7 +66,12 @@
 						Добро пожаловать на мой сайт, здесь я расскажу о себе, о том, чем я
 						занимаюсь и кем являюсь. Поделюсь своей жизнью с вами.
 					</p>
-					<button class="look">Смотреть резюме</button>
+					<a
+						href="https://usman.hh.ru/resume/ef00c55eff0bfd5eef0039ed1f326a62524131"
+						class="resume"
+						target="_blank"
+						>Смотреть резюме</a
+					>
 				</div>
 				<img
 					class="background"
@@ -80,15 +87,14 @@
 							<h3 class="title">Обо мне</h3>
 							<div class="descriptions">
 								<p class="description">
-									Мне зовут Дмитрий. На данный момент мне 15 лет. Но несмотря на
+									Мне зовут Дмитрий. На данный момент мне 17 лет. Но несмотря на
 									это я профессионально занимаюсь Fullstack веб-разработкой,
-									программированием на Python уже более года.
+									программированием на TypeScript уже более двух лет.
 								</p>
 								<p class="description">
 									За это время я успел создать немало крутых сайтов и
-									веб-приложений по макетам PSD, с адаптивной версткой и
-									анимациями, поработать также над чужими проектами, развить
-									кучу навыков.
+									веб-приложений, с адаптивной версткой и анимациями, поработать
+									также над чужими проектами, развить кучу навыков.
 								</p>
 								<p class="description">
 									На данный момент я владею многими современными технологиями,
@@ -102,7 +108,7 @@
 							<ul class="skills__list"></ul>
 						</div>
 					</div>
-					<img class="image" src="src/assets/images/image-1.png" alt="image" />
+					<img class="image" src="src/assets/images/dmitry.jpg" alt="dmitry" />
 				</div>
 			</section>
 			<section id="portfolio">
@@ -110,11 +116,7 @@
 					<h2 class="title">Портфолио</h2>
 
 					<div class="swiper mySwiper">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">Slide 1</div>
-							<div class="swiper-slide">Slide 2</div>
-							<div class="swiper-slide">Slide 3</div>
-						</div>
+						<div class="swiper-wrapper"></div>
 
 						<div class="swiper-button-prev"></div>
 						<div class="swiper-button-next"></div>
@@ -178,13 +180,19 @@
 					</div>
 
 					<form id="form">
-						<input class="input" placeholder="Введите ваше имя" type="text" />
+						<input
+							class="input"
+							placeholder="Введите ваше имя"
+							type="text"
+							name="name"
+						/>
 						<input
 							class="input"
 							placeholder="Введите ваш E-mail"
 							type="email"
+							name="email"
 						/>
-						<button class="button">Оставить заявку</button>
+						<button type="submit" class="button">Оставить заявку</button>
 					</form>
 				</div>
 			</section>
@@ -198,17 +206,33 @@
 							<a class="link" href="#main">Главная</a>
 						</li>
 						<li class="section">
-							<a class="link" href="#about">Обо мне</a>
+							<a class="link" href="#information">Обо мне</a>
 						</li>
 						<li class="section">
-							<a class="link" href="#works">Портфолио</a>
+							<a class="link" href="#portfolio">Портфолио</a>
 						</li>
 						<li class="section">
-							<a class="link" href="#forms">Как связаться</a>
+							<a class="link" href="#contacts">Как связаться</a>
 						</li>
 					</ul>
 				</div>
 			</nav>
 		</footer>
+
+		<div id="sidebar">
+			<nav class="navigation">
+				<ul class="navigation__sections">
+					<li class="section">
+						<a class="link" href="#information">Обо мне</a>
+					</li>
+					<li class="section">
+						<a class="link" href="#portfolio">Портфолио</a>
+					</li>
+					<li class="section">
+						<a class="link" href="#contacts">Как связаться</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
 	</body>
 </html>

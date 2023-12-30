@@ -10,6 +10,11 @@
   gap: 20px;
   z-index: 2;
 
+  @media (max-width: 660px) {
+    justify-content: space-between;
+    padding: 20px 30px;
+  }
+
   .title {
     font-size: 25px;
     font-weight: 500;
@@ -19,10 +24,18 @@
   .navigation {
     position: relative;
 
+    @media (max-width: 660px) {
+      display: none;
+    }
+
     &__sections {
       display: flex;
       align-items: center;
       gap: 40px;
+
+      @media (max-width: 800px) {
+        gap: 20px;
+      }
 
       .link {
         font-size: 18px;
@@ -42,6 +55,10 @@
     align-items: center;
     gap: 20px;
 
+    @media (max-width: 800px) {
+      display: none;
+    }
+
     .network {
       padding: 3px;
       border-radius: 7px;
@@ -49,6 +66,25 @@
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+  }
+
+  #burger {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    display: none;
+    cursor: pointer;
+
+    @media (max-width: 660px) {
+      display: flex;
+    }
+
+    span {
+      width: 22px;
+      height: 2px;
+      background-color: rgb(255, 255, 255);
     }
   }
 }

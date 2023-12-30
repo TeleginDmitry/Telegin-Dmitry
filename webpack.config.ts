@@ -53,7 +53,7 @@ module.exports = {
 				exclude: /node_modules/,
 			},
 			{
-				test: /\.(png)$/,
+				test: /\.(png|jpg)$/,
 				type: 'asset/resource',
 				generator: {
 					filename: path.join('assets', 'images', '[name][ext]'),

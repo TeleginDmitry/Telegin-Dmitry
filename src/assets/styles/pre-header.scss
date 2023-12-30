@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100dvh;
+  min-height: 100vh;
   .body {
     position: relative;
     display: flex;
@@ -26,12 +26,13 @@
       line-height: 23px;
     }
 
-    .look {
+    .resume {
       padding: 15px 50px;
       border-radius: 30px;
       background-color: rgb(255, 255, 255);
       font-weight: 500;
       font-size: 17px;
+      color: #000;
     }
   }
 

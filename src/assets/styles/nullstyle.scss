@@ -98,6 +98,10 @@ main {
   display: flex;
   flex-direction: column;
   gap: 100px;
+
+  @media (max-width: 425px) {
+    gap: 60px;
+  }
 }
 
 main section {

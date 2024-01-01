@@ -4,7 +4,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import PostcssPresetEnv from 'postcss-preset-env'
 import webpack from 'webpack'
 
-const mode = process.env.MODE || 'development'
+const mode = process.env.MODE || 'production'
 
 module.exports = {
 	mode,

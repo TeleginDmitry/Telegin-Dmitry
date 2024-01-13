@@ -1,45 +1,49 @@
 #pre-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  .body {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 100px 20px 100px 20px;
-    gap: 40px;
-    z-index: 1;
-    .title {
-      font-size: 50px;
-      font-weight: 700;
-      color: rgb(255, 255, 255);
-      text-align: center;
-    }
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	.body {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 100px 20px 100px 20px;
+		gap: 40px;
+		z-index: 1;
+		.title {
+			font-size: 50px;
+			font-weight: 700;
+			color: rgb(255, 255, 255);
+			text-align: center;
+		}
 
-    .welcome {
-      font-size: 17px;
-      color: rgb(255, 255, 255);
-      max-width: 700px;
-      text-align: center;
-      line-height: 23px;
-    }
+		.welcome {
+			font-size: 17px;
+			color: rgb(255, 255, 255);
+			max-width: 700px;
+			text-align: center;
+			line-height: 23px;
+		}
 
-    .resume {
-      padding: 15px 50px;
-      border-radius: 30px;
-      background-color: rgb(255, 255, 255);
-      font-weight: 500;
-      font-size: 17px;
-      color: #000;
-    }
-  }
+		.resume {
+			padding: 15px 50px;
+			border-radius: 30px;
+			background-color: rgb(255, 255, 255);
+			font-weight: 500;
+			font-size: 17px;
+			color: #000;
 
-  .background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+			@media (max-width: 320px) {
+				padding: 15px 30px;
+			}
+		}
+	}
+
+	.background {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 }

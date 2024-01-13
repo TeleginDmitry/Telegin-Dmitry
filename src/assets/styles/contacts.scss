@@ -13,10 +13,7 @@
 	.title {
 		font-size: 25px;
 		font-weight: 700;
-
-		@media (max-width: 320px) {
-			text-align: center;
-		}
+		text-align: center;
 	}
 	.body {
 		display: flex;

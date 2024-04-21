@@ -1,5 +1,5 @@
 import { projectsService } from "services/projects/projects.service";
-import { API_URL } from "configs/api.config";
+import { STATIC_URL } from "configs/api.config";
 
 const swiperWrapperElement = document.querySelector(".swiper-wrapper");
 
@@ -18,7 +18,7 @@ new Promise((resolve, reject) => {
         <div class="container">
           <img
             class="image"
-            src="${API_URL}${image}"
+            src="${STATIC_URL}${image}"
             alt="project"
           />
           <a

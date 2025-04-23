@@ -1,38 +1,40 @@
-import { projectsService } from "services/projects/projects.service";
-import { STATIC_URL } from "configs/api.config";
+import { STATIC_URL } from '@configs/api.config'
+import { projectsService } from '@services/projects/projects.service'
 
-const swiperWrapperElement = document.querySelector(".swiper-wrapper");
+const swiperWrapperElement = document.querySelector('.swiper-wrapper')
 
 new Promise((resolve, reject) => {
-  const service = new projectsService();
-  service.get().then((projects) => {
+  const service = new projectsService()
+  service.get().then(projects => {
     projects.forEach(({ description, image, link }) => {
-      const words = description.split(" ");
-      const firstWord = words[0];
+      const words = description.split(' ')
+      const firstWord = words[0]
 
-      words.shift();
+      words.shift()
 
       swiperWrapperElement?.insertAdjacentHTML(
-        "beforeend",
+        'beforeend',
         `<div class="swiper-slide">
         <div class="container">
           <img
             class="image"
             src="${STATIC_URL}${image}"
-            alt="project"
+            alt="Превью проекта"
+            loading="lazy"
           />
           <a
             target="_blank"
             class="link"
             href="${link}"
+            rel="noopener"
           ></a>
         </div>
 
         <p class="description">
-          <span>${firstWord}</span> ${words.join(" ")}
+          <span>${firstWord}</span> ${words.join(' ')}
         </p>
-      </div>`,
-      );
-    });
-  });
-});
+      </div>`
+      )
+    })
+  })
+})

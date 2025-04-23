@@ -35,7 +35,7 @@ body {
   font-size: 100%;
   line-height: 1;
   font-size: 14px;
-  font-family: "Montserrat-td", sans-serif;
+  font-family: 'Montserrat-td', sans-serif;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -45,6 +45,7 @@ input,
 button,
 textarea {
   font-family: inherit;
+  background: none;
 }
 
 input::-ms-clear {
@@ -85,26 +86,4 @@ h5,
 h6 {
   font-size: inherit;
   font-weight: inherit;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100dvh;
-}
-main {
-  flex: 1;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 100px;
-
-  @media (max-width: 425px) {
-    gap: 60px;
-  }
-}
-
-main section {
-  position: relative;
-  padding: 0px 20px;
 }

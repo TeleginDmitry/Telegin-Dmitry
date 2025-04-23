@@ -1,279 +1,398 @@
 <!doctype html>
 <html lang="ru">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" href="src/assets/favicon.ico" type="image/x-icon" />
-		<title>Дмитрий Телегин</title>
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Дмитрий Телегин — Fullstack веб‑разработчик</title>
+    <meta
+      name="description"
+      content="Портфолио Дмитрия Телегина — Fullstack веб‑разработчик. Обо мне, мои навыки, примеры работ и контакты."
+    />
+    <link rel="canonical" href="https://telegin-dmitry.vercel.app/" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-	<body>
-		<header id="header">
-			<h1 class="title">Дмитрий Телегин</h1>
-			<nav class="navigation">
-				<ul class="navigation__sections">
-					<li class="section">
-						<a class="link" href="#information">Обо мне</a>
-					</li>
-					<li class="section">
-						<a class="link" href="#portfolio">Портфолио</a>
-					</li>
-					<li class="section">
-						<a class="link" href="#contacts">Как связаться</a>
-					</li>
-				</ul>
-			</nav>
-			<ul class="networks">
-				<li class="network">
-					<a target="_blank" href="https://t.me/d1mas1k2" class="link">
-						<img
-							src="src/assets/icons/brand-telegram.svg"
-							alt="brand-telegram"
-							class="image"
-						/>
-					</a>
-				</li>
-				<li class="network">
-					<a target="_blank" href="https://vk.com/dmitry_tel" class="link">
-						<img
-							src="src/assets/icons/brand-vk.svg"
-							alt="brand-vk"
-							class="image"
-						/>
-					</a>
-				</li>
-				<li class="network">
-					<a
-						target="_blank"
-						href="https://github.com/TeleginDmitry"
-						class="link"
-					>
-						<img
-							src="src/assets/icons/brand-github.svg"
-							alt="brand-github"
-							class="image"
-						/>
-					</a>
-				</li>
-			</ul>
+    <!-- JSON‑LD микроразметка организации/персоны -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Дмитрий Телегин",
+        "url": "https://telegin-dmitry.vercel.app/",
+        "sameAs": [
+          "https://t.me/d1mas1k2",
+          "https://vk.com/dmitry_tel",
+          "https://github.com/TeleginDmitry"
+        ],
+        "jobTitle": "Fullstack веб‑разработчик"
+      }
+    </script>
 
-			<div id="burger"><span></span><span></span><span></span></div>
-		</header>
-		<main id="main">
-			<section id="pre-header">
-				<div class="body">
-					<h2 class="title">Дмитрий Телегин</h2>
-					<p class="welcome">
-						Добро пожаловать на мой сайт, здесь я расскажу о себе, о том, чем я
-						занимаюсь и кем являюсь. Поделюсь своей жизнью с вами.
-					</p>
-					<a
-						href="https://usman.hh.ru/resume/ef00c55eff0bfd5eef0039ed1f326a62524131"
-						class="resume"
-						target="_blank"
-						>Смотреть резюме</a
-					>
-				</div>
-				<img
-					class="background"
-					src="src/assets/images/background-1.avif"
-					alt="background"
-				/>
-			</section>
-			<section id="information">
-				<h2 class="title">Информация</h2>
-				<div class="body">
-					<div class="info">
-						<div class="about">
-							<h3 class="title">Обо мне</h3>
-							<div class="descriptions">
-								<p class="description">
-									Мне зовут Дмитрий. На данный момент мне 18 лет. Но несмотря на
-									это я профессионально занимаюсь Fullstack веб-разработкой,
-									программированием на TypeScript уже более трёх лет.
-								</p>
-								<p class="description">
-									За это время я успел создать немало крутых сайтов и
-									веб-приложений, с адаптивной версткой и анимациями, поработать
-									также над чужими проектами, развить кучу навыков.
-								</p>
-								<p class="description">
-									На данный момент я владею многими современными технологиями,
-									без которых сейчас нельзя представить Fullstack веб-разработку
-									в целом.
-								</p>
-							</div>
-						</div>
-						<div class="skills">
-							<h3 class="title">Мои навыки</h3>
-							<ul class="skills__list"></ul>
-						</div>
-					</div>
-					<img class="image" src="src/assets/images/dmitry.avif" alt="dmitry" />
-				</div>
-			</section>
-			<section id="portfolio">
-				<div class="body">
-					<h2 class="title">Портфолио</h2>
+    <link rel="stylesheet" href="./src/styles/mixins.scss" />
+    <script src="./src/index.ts" type="module" defer></script>
+  </head>
 
-					<div class="swiper mySwiper">
-						<div class="swiper-wrapper"></div>
+  <body>
+    <header id="header">
+      <h1 class="title">Дмитрий Телегин</h1>
+      <nav class="navigation">
+        <ul class="navigation__sections">
+          <li>
+            <a class="navigation__link" href="#about">Обо мне</a>
+          </li>
+          <li>
+            <a class="navigation__link" href="#portfolio">Портфолио</a>
+          </li>
+          <li>
+            <a class="navigation__link" href="#contacts">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+      <ul class="social-links" aria-label="Социальные сети">
+        <li>
+          <a
+            href="https://t.me/d1mas1k2"
+            target="_blank"
+            rel="noopener"
+            aria-label="Telegram"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-brand-telegram"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="white"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+            </svg>
+          </a>
+        </li>
 
-						<button class="swiper-button-prev">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								class="icon icon-tabler icon-tabler-circle-chevron-left"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								stroke-width="2"
-								stroke="currentColor"
-								fill="none"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							>
-								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
-								<path d="M13 15l-3 -3l3 -3" stroke="#ffffff" />
-								<path
-									d="M21 12a9 9 0 1 0 -18 0a9 9 0 0 0 18 0z"
-									stroke="#ffffff"
-								/>
-							</svg>
-						</button>
-						<button class="swiper-button-next">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								class="icon icon-tabler icon-tabler-circle-chevron-right"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								stroke-width="2"
-								stroke="currentColor"
-								fill="none"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							>
-								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
-								<path d="M11 9l3 3l-3 3" stroke="#ffffff" />
-								<path
-									d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0z"
-									stroke="#ffffff"
-								/>
-							</svg>
-						</button>
-					</div>
-				</div>
-				<img
-					class="background"
-					src="src/assets/images/background-2.avif"
-					alt="background"
-				/>
-			</section>
-			<section id="contacts">
-				<h2 class="title">Как со мной связаться?</h2>
-				<div class="body">
-					<div class="info">
-						<p class="text">
-							Оставьте свои данные, для дальнейшей связи с вами по электронной
-							почте. Отвечаю на сообщения в течении суток.
-						</p>
-						<p class="text">
-							Вы также можете связаться со мной в мессенджерах или соц. сетях,
-							для дальнейшего сотдрутничества. Ищите меня здесь
-						</p>
-						<ul class="networks">
-							<li class="network">
-								<a target="_blank" href="https://t.me/d1mas1k2" class="link">
-									<img
-										src="src/assets/icons/brand-telegram.svg"
-										alt="brand-telegram"
-										class="image"
-									/>
-								</a>
-							</li>
-							<li class="network">
-								<a
-									target="_blank"
-									href="https://vk.com/dmitry_tel"
-									class="link"
-								>
-									<img
-										src="src/assets/icons/brand-vk.svg"
-										alt="brand-vk"
-										class="image"
-									/>
-								</a>
-							</li>
-							<li class="network">
-								<a
-									target="_blank"
-									href="https://github.com/TeleginDmitry"
-									class="link"
-								>
-									<img
-										src="src/assets/icons/brand-github.svg"
-										alt="brand-github"
-										class="image"
-									/>
-								</a>
-							</li>
-						</ul>
-					</div>
+        <li>
+          <a
+            href="https://vk.com/dmitry_tel"
+            target="_blank"
+            rel="noopener"
+            aria-label="VK"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-brand-vk"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="white"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M14 19h-4a8 8 0 0 1 -8 -8v-5h4v5a4 4 0 0 0 4 4h0v-9h4v4.5l.03 0a4.531 4.531 0 0 0 3.97 -4.496h4l-.342 1.711a6.858 6.858 0 0 1 -3.658 4.789h0a5.34 5.34 0 0 1 3.566 4.111l.434 2.389h0h-4a4.531 4.531 0 0 0 -3.97 -4.496v4.5z"
+              />
+            </svg>
+          </a>
+        </li>
 
-					<form id="form">
-						<input
-							class="input"
-							placeholder="Введите ваше имя"
-							type="text"
-							name="name"
-						/>
-						<input
-							class="input"
-							placeholder="Введите ваш E-mail"
-							type="email"
-							name="email"
-						/>
-						<button type="submit" class="button">Оставить заявку</button>
-					</form>
-				</div>
-			</section>
-		</main>
-		<footer id="footer">
-			<nav class="navigation">
-				<div class="navigation__block">
-					<h2 class="title">Навигация</h2>
-					<ul сlass="sections">
-						<li class="section">
-							<a class="link" href="#main">Главная</a>
-						</li>
-						<li class="section">
-							<a class="link" href="#information">Обо мне</a>
-						</li>
-						<li class="section">
-							<a class="link" href="#portfolio">Портфолио</a>
-						</li>
-						<li class="section">
-							<a class="link" href="#contacts">Как связаться</a>
-						</li>
-					</ul>
-				</div>
-			</nav>
-		</footer>
+        <li>
+          <a
+            href="https://github.com/TeleginDmitry"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-brand-github"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="white"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+              />
+            </svg>
+          </a>
+        </li>
+      </ul>
 
-		<div id="sidebar">
-			<nav class="navigation">
-				<ul class="navigation__sections">
-					<li class="section">
-						<a class="link" href="#information">Обо мне</a>
-					</li>
-					<li class="section">
-						<a class="link" href="#portfolio">Портфолио</a>
-					</li>
-					<li class="section">
-						<a class="link" href="#contacts">Как связаться</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</body>
+      <button
+        id="burger"
+        aria-label="Открыть/Закрыть меню"
+        aria-expanded="false"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="28px"
+          viewBox="0 -960 960 960"
+          width="28px"
+          fill="#ffFfff"
+        >
+          <path
+            d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+          />
+        </svg>
+      </button>
+    </header>
+
+    <main id="main" role="main" aria-labelledby="welcome-title">
+      <section id="pre-header">
+        <h2 class="title">Дмитрий Телегин</h2>
+        <p class="welcome">
+          Добро пожаловать на мой сайт!<br />
+          Здесь я поделюсь с вами немного о себе и о своих навыках.
+        </p>
+        <a
+          href="https://voronezh.hh.ru/resume/ef00c55eff0bfd5eef0039ed1f326a62524131"
+          class="resume"
+          target="_blank"
+          rel="noopener"
+          >Смотреть резюме на hh.ru</a
+        >
+      </section>
+      <section id="about" aria-labelledby="about-title">
+        <h2 class="title section-title">Обо мне</h2>
+        <div class="container">
+          <div class="info">
+            <p class="description">
+              Я — разносторонний специалист с любовью к чтению, прогулкам на
+              свежем воздухе, спорту и ораторскому искусству. Уже более трёх лет
+              я разрабатываю веб‑приложения, но последние годы всё больше
+              увлёкся бизнес‑логикой и сложными алгоритмами. Мне важно
+              выстраивать крепкие отношения — как в команде, так и с клиентами —
+              и я умею ясно и убедительно доносить идеи. Живу по системе:
+              планирую дни и недели и всегда знаю, что нужно сделать. Создаю
+              мощный «мозговой центр» из лучших специалистов своего окружения и
+              регулярно провожу мозговые штурмы для анализа ошибок и
+              планирования дальнейших шагов.
+            </p>
+
+            <div class="goals" aria-labelledby="goals-title">
+              <h3 class="subtitle">Мои цели</h3>
+              <ul class="goals__list">
+                <li class="goal">
+                  Лучшее физическое и эмоциональное состояние
+                </li>
+                <li class="goal">
+                  Превосходный оратор и мастер общения с людьми
+                </li>
+                <li class="goal">
+                  Профессионал в IT и разработке сложной бизнес-логики
+                </li>
+                <li class="goal">
+                  Сильное информационное поле с единомышленниками и
+                  профессионалами
+                </li>
+                <li class="goal">Финансовое благополучие</li>
+              </ul>
+            </div>
+
+            <div class="skills" aria-labelledby="skills-title">
+              <h3 class="subtitle">Мои навыки</h3>
+              <ul class="skills__list"></ul>
+            </div>
+          </div>
+          <img class="image" src="images/dmitry.jpg" alt="Телегин Дмитрий" />
+        </div>
+      </section>
+      <section id="portfolio">
+        <h2 class="title section-title">Портфолио</h2>
+
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper"></div>
+
+          <button class="swiper-button-prev" aria-label="Предыдущий слайд">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="35px"
+              viewBox="0 -960 960 960"
+              width="35px"
+              fill="#ffFfff"
+            >
+              <path
+                d="m448.67-240.67-240-240 240-240L495.33-674l-193 193.33 193 193.34-46.66 46.66Zm256.66 0-240-240 240-240L752-674 559-480.67l193 193.34-46.67 46.66Z"
+              />
+            </svg>
+          </button>
+          <button class="swiper-button-next" aria-label="Следующий слайд">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="35px"
+              viewBox="0 -960 960 960"
+              width="35px"
+              fill="#ffFfff"
+            >
+              <path
+                d="M401.67-480.67 208.67-674l46.66-46.67 240 240-240 240-46.66-46.66 193-193.34Zm256.66 0L465.33-674 512-720.67l240 240-240 240-46.67-46.66 193-193.34Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </section>
+      <section id="contacts">
+        <h2 class="title section-title">Как со мной связаться?</h2>
+        <div class="container">
+          <div class="info">
+            <p class="text">
+              Оставьте свои данные для дальнейшей связи с вами по электронной
+              почте.
+            </p>
+            <p class="text">
+              Вы также можете связаться со мной в мессенджерах или социальных
+              сетях.
+            </p>
+            <ul class="social-links" aria-label="Социальные сети">
+              <li>
+                <a
+                  href="https://t.me/d1mas1k2"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Telegram"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-brand-telegram"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="black"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+                  </svg>
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="https://vk.com/dmitry_tel"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="VK"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-brand-vk"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="black"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M14 19h-4a8 8 0 0 1 -8 -8v-5h4v5a4 4 0 0 0 4 4h0v-9h4v4.5l.03 0a4.531 4.531 0 0 0 3.97 -4.496h4l-.342 1.711a6.858 6.858 0 0 1 -3.658 4.789h0a5.34 5.34 0 0 1 3.566 4.111l.434 2.389h0h-4a4.531 4.531 0 0 0 -3.97 -4.496v4.5z"
+                    />
+                  </svg>
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="https://github.com/TeleginDmitry"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="GitHub"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-brand-github"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="black"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <form id="contact-form" aria-labelledby="form-title">
+            <input
+              class="input"
+              placeholder="Введите ваше имя"
+              type="text"
+              name="name"
+              required
+            />
+            <input
+              class="input"
+              placeholder="Введите ваш E-mail"
+              type="email"
+              name="email"
+              required
+            />
+            <button type="submit" class="button">Оставить заявку</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <div class="navigation">
+        <h2 class="title">Навигация</h2>
+        <nav>
+          <ul class="navigation__sections">
+            <li>
+              <a class="navigation__link" href="#main">Главная</a>
+            </li>
+            <li>
+              <a class="navigation__link" href="#about">Обо мне</a>
+            </li>
+            <li>
+              <a class="navigation__link" href="#portfolio">Портфолио</a>
+            </li>
+            <li>
+              <a class="navigation__link" href="#contacts">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <p class="right">&copy; 2025 Дмитрий Телегин. Все права защищены.</p>
+    </footer>
+
+    <aside id="sidebar">
+      <nav class="navigation">
+        <ul class="navigation__sections">
+          <li>
+            <a class="navigation__link" href="#about">Обо мне</a>
+          </li>
+          <li>
+            <a class="navigation__link" href="#portfolio">Портфолио</a>
+          </li>
+          <li>
+            <a class="navigation__link" href="#contacts">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+  </body>
 </html>

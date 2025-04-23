@@ -1,0 +1,84 @@
+section {
+  padding: 80px 20px;
+  position: relative;
+
+  @media screen and (max-width: 768px) {
+    padding: 50px 20px;
+  }
+
+  @media screen and (max-width: 375px) {
+    padding: 40px 15px;
+  }
+}
+
+button,
+a {
+  transition: transform 0.2s ease;
+}
+
+button:hover,
+a:hover {
+  transform: scale(1.03);
+}
+
+button:active,
+a:active {
+  transform: scale(0.97);
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 28px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 23px;
+  }
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 80px;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 60px;
+  }
+
+  @media screen and (max-width: 425px) {
+    margin-bottom: 40px;
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+
+  @media screen and (max-width: 768px) {
+    gap: 50px;
+  }
+}
+
+.social-links svg {
+  transition: transform 0.2s ease;
+}
+
+.social-links svg:hover {
+  transform: scale(1.2);
+}
+
+.social-links svg:active {
+  transform: scale(0.97);
+}

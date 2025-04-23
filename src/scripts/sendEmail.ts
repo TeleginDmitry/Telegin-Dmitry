@@ -1,23 +1,22 @@
-import { EmailService } from "src/services/email/email.service";
-import { SendFormDataType } from "src/types/email.types";
+import { EmailService } from '@services/email/email.service'
 
-const formElement = document.querySelector<HTMLFormElement>("#form");
+const formElement = document.querySelector<HTMLFormElement>('#contact-form')
 
-formElement?.addEventListener("submit", (event) => {
-  event.preventDefault();
+formElement?.addEventListener('submit', event => {
+  event.preventDefault()
 
-  const formData = new FormData(formElement);
+  const formData = new FormData(formElement)
 
-  const name = formData.get("name");
-  const email = formData.get("email");
+  const name = formData.get('name')
+  const email = formData.get('email')
 
   if (!name || !email) {
-    return;
+    return
   }
 
-  const service = new EmailService();
+  const service = new EmailService()
 
   service.send(formData).then(() => {
-    formElement.reset();
-  });
-});
+    formElement.reset()
+  })
+})

@@ -179,6 +179,42 @@
               планирования дальнейших шагов.
             </p>
 
+            <div id="gallery-swiper" class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    class="image"
+                    src="images/dmitry.jpg"
+                    alt="Телегин Дмитрий"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
+              <button class="swiper-button-prev" aria-label="Предыдущий слайд">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 -960 960 960"
+                  fill="#000000"
+                >
+                  <path
+                    d="m448.67-240.67-240-240 240-240L495.33-674l-193 193.33 193 193.34-46.66 46.66Zm256.66 0-240-240 240-240L752-674 559-480.67l193 193.34-46.67 46.66Z"
+                  />
+                </svg>
+              </button>
+              <button class="swiper-button-next" aria-label="Следующий слайд">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 -960 960 960"
+                  fill="#000000"
+                >
+                  <path
+                    d="M401.67-480.67 208.67-674l46.66-46.67 240 240-240 240-46.66-46.66 193-193.34Zm256.66 0L465.33-674 512-720.67l240 240-240 240-46.67-46.66 193-193.34Z"
+                  />
+                </svg>
+              </button>
+            </div>
+
             <div class="goals" aria-labelledby="goals-title">
               <h3 class="subtitle">Мои цели</h3>
               <ul class="goals__list">
@@ -199,18 +235,20 @@
               </ul>
             </div>
 
-            <div class="skills" aria-labelledby="skills-title">
-              <h3 class="subtitle">Мои навыки</h3>
+            <div class="skills">
+              <h3 class="subtitle">Основные навыки</h3>
+              <ul class="skills__list_main"></ul>
+
+              <h3 class="subtitle">Есть опыт</h3>
               <ul class="skills__list"></ul>
             </div>
           </div>
-          <img class="image" src="images/dmitry.jpg" alt="Телегин Дмитрий" />
         </div>
       </section>
       <section id="portfolio">
         <h2 class="title section-title">Портфолио</h2>
 
-        <div class="swiper mySwiper">
+        <div id="portfolio-swiper" class="swiper">
           <div class="swiper-wrapper"></div>
 
           <button class="swiper-button-prev" aria-label="Предыдущий слайд">

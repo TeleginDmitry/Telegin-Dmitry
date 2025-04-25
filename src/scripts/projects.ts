@@ -9,10 +9,10 @@ new Promise(() => {
   const service = new ProjectsService()
   service.get().then(projects => {
     projects.forEach(({ description, image, link }) => {
-      const words = description.split(' ')
-      const firstWord = words[0]
+      const words = description.split(' - ')
 
-      words.shift()
+      const projectName = words[0]
+      const projectDescription = words[1]
 
       swiperWrapperElement?.insertAdjacentHTML(
         'beforeend',
@@ -33,7 +33,7 @@ new Promise(() => {
           </div>
 
           <p class="description">
-            <span>${firstWord}</span> ${words.join(' ')}
+            <span>${projectName} - </span> ${projectDescription}
           </p>
         </div>`
       )

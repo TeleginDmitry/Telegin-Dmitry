@@ -1,10 +1,12 @@
 import { STATIC_URL } from '@configs/api.config'
-import { projectsService } from '@services/projects/projects.service'
+import { ProjectsService } from '@services/projects/projects.service'
 
-const swiperWrapperElement = document.querySelector('.swiper-wrapper')
+const swiperWrapperElement = document.querySelector(
+  '#portfolio-swiper .swiper-wrapper'
+)
 
-new Promise((resolve, reject) => {
-  const service = new projectsService()
+new Promise(() => {
+  const service = new ProjectsService()
   service.get().then(projects => {
     projects.forEach(({ description, image, link }) => {
       const words = description.split(' ')
@@ -15,25 +17,25 @@ new Promise((resolve, reject) => {
       swiperWrapperElement?.insertAdjacentHTML(
         'beforeend',
         `<div class="swiper-slide">
-        <div class="container">
-          <img
-            class="image"
-            src="${STATIC_URL}${image}"
-            alt="Превью проекта"
-            loading="lazy"
-          />
-          <a
-            target="_blank"
-            class="link"
-            href="${link}"
-            rel="noopener"
-          ></a>
-        </div>
+          <div class="container">
+            <img
+              class="image"
+              src="${STATIC_URL}${image}"
+              alt="Превью проекта"
+              loading="lazy"
+            />
+            <a
+              target="_blank"
+              class="link"
+              href="${link}"
+              rel="noopener"
+            ></a>
+          </div>
 
-        <p class="description">
-          <span>${firstWord}</span> ${words.join(' ')}
-        </p>
-      </div>`
+          <p class="description">
+            <span>${firstWord}</span> ${words.join(' ')}
+          </p>
+        </div>`
       )
     })
   })
